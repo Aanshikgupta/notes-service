@@ -2,6 +2,7 @@ package com.aanshik.notesservice.controller;
 
 import com.aanshik.notesservice.payload.NoteDTO;
 import com.aanshik.notesservice.service.NoteService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,7 @@ public class NoteController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<NoteDTO> createNote(@RequestBody NoteDTO noteDTO) {
+    public ResponseEntity<NoteDTO> createNote(@Valid @RequestBody NoteDTO noteDTO) {
         return ResponseEntity.accepted().body(noteService.createNote(noteDTO));
     }
 

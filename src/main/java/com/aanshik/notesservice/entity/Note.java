@@ -19,6 +19,6 @@ public class Note {
     private String title;
     @Column(name = "note_description")
     private String description;
-    private final Date createdDate = new Date(System.currentTimeMillis());
-    private Date lastUpdated = new Date(System.currentTimeMillis());
+    private Date createdDate;
+    private Date lastUpdated;
 }
